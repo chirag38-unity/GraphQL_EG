@@ -6,8 +6,11 @@ import com.chirag_redij.CountryQuery
 import com.chirag_redij.graphql_eg.domain.CountryClient
 import com.chirag_redij.graphql_eg.domain.DetailedCountry
 import com.chirag_redij.graphql_eg.domain.ListCountry
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ApolloCountryClient(
+@Singleton
+class ApolloCountryClient @Inject constructor(
     private val apolloClient: ApolloClient
 ) : CountryClient {
     override suspend fun getCountries(): List<ListCountry> {

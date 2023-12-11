@@ -5,12 +5,15 @@ import androidx.lifecycle.viewModelScope
 import com.chirag_redij.graphql_eg.data.ApolloCountryClient
 import com.chirag_redij.graphql_eg.domain.DetailedCountry
 import com.chirag_redij.graphql_eg.domain.ListCountry
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CountriesViewModel(
+@HiltViewModel
+class CountriesViewModel @Inject constructor(
     private val apolloCountryClient: ApolloCountryClient
 ) : ViewModel() {
 
